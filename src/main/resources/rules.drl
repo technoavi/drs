@@ -1,0 +1,8 @@
+import com.as.drs.models.Person
+
+rule CheckEligibility
+when
+    $person: Person(age < 18)
+then
+    $person.setEligibleForDiscount(false);
+end
