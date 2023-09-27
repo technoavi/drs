@@ -4,3 +4,24 @@ server:
 spring:
   application:
     name : drs-system
+
+    jpa:
+      hibernate:
+        ddl-auto: update
+        properties:
+          hibernate:
+            dialect: org.hibernate.dialect.SQLServerDialect
+
+  datasource:
+    url: jdbc:sqlserver://102.74.65.45/DealerRevenueScorecard
+    username: Sunil
+    password: Autovyn@1234
+    driverClassName: com.microsoft.sqlserver.jdbc.SQLServerDriver
+
+
+#    spring.datasource.url= jdbc:sqlserver://localhost:1434;encrypt=true;trustServerCertificate=true;databaseName=bezkoder_db
+
+#
+#    spring.
+#    spring.jpa.hibernate.ddl-auto= update
+
