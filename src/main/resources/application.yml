@@ -18,8 +18,8 @@ spring:
 
   datasource:
     url: jdbc:sqlserver://103.74.65.45;databaseName=DealerRevenueScorecard;encrypt=true;trustServerCertificate=true;
-    username: sunil
-    password: Autovyn@1234
+    username: ${DB_USERNAME}
+    password: ${DB_PASSWORD}
     driverClassName: com.microsoft.sqlserver.jdbc.SQLServerDriver
 
 
