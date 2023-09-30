@@ -1,0 +1,29 @@
+import com.as.drs.models.MarginData
+
+rule "Calculate Points"
+    when
+        $data : MarginData( margin >= 50000 )
+    then
+        $data.setPoints(50);
+end
+
+rule "Calculate Points (40)"
+    when
+        $data : MarginData( margin >= 40000 && margin < 50000 )
+    then
+        $data.setPoints(40);
+end
+
+rule "Calculate Points (30)"
+    when
+        $data : MarginData( margin >= 30000 && margin < 40000 )
+    then
+        $data.setPoints(30);
+end
+
+rule "Calculate Points (0)"
+    when
+        $data : MarginData( margin < 30000 )
+    then
+        $data.setPoints(0);
+end

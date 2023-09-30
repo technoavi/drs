@@ -123,9 +123,19 @@
 			<artifactId>spring-boot-starter-data-jpa</artifactId>
 		</dependency>
 		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-devtools</artifactId>
+			<optional>true</optional>
+		</dependency><!--		<dependency>-->
+<!--			<groupId>com.microsoft.sqlserver</groupId>-->
+<!--			<artifactId>mssql-jdbc</artifactId>-->
+<!--			<version>9.4.0.jre11</version> &lt;!&ndash; Replace with the latest version &ndash;&gt;-->
+<!--		</dependency>-->
+
+		<dependency>
 			<groupId>com.microsoft.sqlserver</groupId>
 			<artifactId>mssql-jdbc</artifactId>
-			<version>9.4.0.jre11</version> <!-- Replace with the latest version -->
+			<scope>runtime</scope>
 		</dependency>
 
 		<dependency>
@@ -171,11 +181,11 @@
 			</plugin>
 		</plugins>
 	</build>
-	<repositories>
-		<!-- To resolve mssql-jdbc dependency -->
-		<repository>
-			<id>mssql-jdbc-repo</id>
-			<url>https://packages.microsoft.com/maven/mssql-jdbc</url>
-		</repository>
-	</repositories>
+<!--	<repositories>-->
+<!--		&lt;!&ndash; To resolve mssql-jdbc dependency &ndash;&gt;-->
+<!--		<repository>-->
+<!--			<id>mssql-jdbc-repo</id>-->
+<!--			<url>https://packages.microsoft.com/maven/mssql-jdbc</url>-->
+<!--		</repository>-->
+<!--	</repositories>-->
 </project>

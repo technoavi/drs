@@ -13,12 +13,13 @@ import org.springframework.context.annotation.Configuration;
 public class DroolsConfig {
 
     private static final String RULES_CUSTOMER_RULES_DRL = "rules/customer-discount.drl";
+    private static final String RULES_MARGIN_RULES_DRL = "rules/margin-points.drl";
     private static final KieServices kieServices = KieServices.Factory.get();
 
     @Bean
     public KieContainer kieContainer() {
         KieFileSystem kieFileSystem = kieServices.newKieFileSystem();
-        kieFileSystem.write(ResourceFactory.newClassPathResource(RULES_CUSTOMER_RULES_DRL));
+        kieFileSystem.write(ResourceFactory.newClassPathResource(RULES_MARGIN_RULES_DRL));
         KieBuilder kb = kieServices.newKieBuilder(kieFileSystem);
         kb.buildAll();
         KieModule kieModule = kb.getKieModule();

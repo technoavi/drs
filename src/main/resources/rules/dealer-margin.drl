@@ -1,0 +1,25 @@
+import com.as.drs.entity.DRS_SummaryData
+
+
+rule "Calculate Points"
+when
+    $entity : DRS_SummaryData()
+
+    $points : Integer() from calculatePoints($entity.getNcsMarginAmount())
+
+then
+    // Assign the calculated points to the entity
+    $entity.setPoints($points);
+end
+
+function Integer calculatePoints(Double ncsMarginAmount) {
+    if (ncsMarginAmount >= 50000) {
+        return 50;
+    } else if (ncsMarginAmount >= 40000) {
+        return 40;
+    } else if (ncsMarginAmount >= 30000) {
+        return 30;
+    } else {
+        return 0;
+    }
+}
